@@ -14,7 +14,7 @@ set completeopt=noinsert,menuone,noselect
 
 " Keyboard shortcuts 
 let mapleader=" "
-tnoremap <Leader><Esc> <C-\><C-n> " Map exiting terminal to escape key
+tnoremap <Esc> <C-\><C-n> " Map exiting terminal to escape key
 nmap <Leader>r :NERDTreeFocus<cr>R<C-W><C-P>
 
 " Visual enhancements
