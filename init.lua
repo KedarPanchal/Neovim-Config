@@ -71,6 +71,16 @@ require("lazy").setup({
     { "catppuccin/nvim", name = "catppuccin" },
     -- AI Agents
     { "github/copilot.vim" },
+    { 
+        "CopilotC-Nvim/CopilotChat.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "github/copilot.vim"
+        },
+        build = "make tiktoken",
+        opts = {},
+    },
 })
 
 -- =========================
@@ -82,6 +92,15 @@ vim.api.nvim_set_keymap('i', '<CR>',
   [[coc#pum#visible() ? coc#pum#next(1) : "\<CR>"]],
   { expr = true, silent = true }
 )
+
+-- Configure Copilot Chat suggestion keybinding
+require("CopilotChat").setup({
+    suggestion = {
+        keymap = {
+            accept = "<S-TAB>"  -- Shift + Tab to accept suggestion
+        },
+    },
+})
 
 -- =========================
 -- Color scheme
@@ -95,4 +114,6 @@ vim.cmd([[
   autocmd VimEnter * botright terminal
   autocmd VimEnter * resize 10 | wincmd p
   autocmd VimEnter * NERDTree | wincmd p
+  autocmd VimEnter * CopilotChat
+  autocmd VimEnter * vertical resize 60 | wincmd p
 ]])
