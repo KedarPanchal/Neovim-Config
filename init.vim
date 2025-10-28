@@ -69,7 +69,8 @@ call plug#end()
 " Plugin Configuration
 " =========================
 
-imap <C-y> <Plug>(copilot-accept)
+" Use Enter for navigating completion menu
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#next(1) : "\<CR>"
 
 " ========================= 
 " Color scheme
