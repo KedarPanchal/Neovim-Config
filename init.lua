@@ -46,26 +46,32 @@ vim.cmd([[
 ]])
 
 -- =========================
--- Plugin Management using vim-plug
+-- Plugin Management
+-- Using lazy.nvim
 -- =========================
-vim.cmd([[
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-" File and code navigation
-Plug 'preservim/nerdtree' " NerdTree File explorer
-Plug 'ryanoasis/vim-devicons' " Add file icons to NerdTree
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git", lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-" Code completion
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
-" Color scheme
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " Catppuccin color scheme
-
-" AI agents
-Plug 'github/copilot.vim' " Copilot Agent
-
-call plug#end()
-]])
+-- Plugin list
+require("lazy").setup({
+    -- File explorer
+    { "preservim/nerdtree" },
+    { "ryanoasis/vim-devicons" },
+    -- Autocompletion and LSP
+    { "neoclide/coc.nvim", branch = "release" },
+    -- Color scheme 
+    { "catppuccin/nvim", name = "catppuccin" },
+    -- AI Agents
+    { "github/copilot.vim" },
+})
 
 -- =========================
 -- Plugin Configuration
