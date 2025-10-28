@@ -13,7 +13,7 @@ set splitbelow
 set completeopt=noinsert,menuone,noselect
 
 " Keyboard shortcuts 
-let mapleader=" "
+let mapleader="\<Space>"
 tnoremap <Esc> <C-\><C-n> " Map exiting terminal to escape key
 nmap <Leader>r :NERDTreeFocus<cr>R<C-W><C-P>
 
@@ -45,6 +45,7 @@ syntax on
 
 " =========================
 " Plugin Management
+" Using vim-plug
 " =========================
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
@@ -57,10 +58,10 @@ Plug 'ryanoasis/vim-devicons' " Add file icons to NerdTree
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Color scheme
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " Catppuccin color scheme
 
 " AI agents
-Plug 'github/copilot.vim' " Copilot AI Pair Programmer
+Plug 'github/copilot.vim' " Copilot Agent
 
 call plug#end()
 
@@ -68,7 +69,7 @@ call plug#end()
 " Plugin Configuration
 " =========================
 
-
+imap <C-y> <Plug>(copilot-accept)
 
 " ========================= 
 " Color scheme
@@ -80,6 +81,6 @@ colorscheme catppuccin-macchiato
 " Startup commands
 " =========================
 
-autocmd VimEnter * botright terminal
-autocmd VimEnter * resize 10 | wincmd p
-autocmd VimEnter * NERDTree | wincmd p
+autocmd VimEnter * botright terminal " Open terminal at the bottom
+autocmd VimEnter * resize 10 | wincmd p " Resize terminal window
+autocmd VimEnter * NERDTree | wincmd p " Open NerdTree on startup
