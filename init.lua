@@ -67,6 +67,11 @@ require("lazy").setup({
     { "ryanoasis/vim-devicons" },
     -- Autocompletion and LSP
     { "neoclide/coc.nvim", branch = "release" },
+    -- Fuzzy Finder
+    {
+        "nvim-telescope/telescope.nvim", 
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
     -- Color scheme 
     { "catppuccin/nvim", name = "catppuccin" },
     -- AI Agents
@@ -92,6 +97,26 @@ vim.api.nvim_set_keymap('i', '<CR>',
   [[coc#pum#visible() ? coc#pum#next(1) : "\<CR>"]],
   { expr = true, silent = true }
 )
+
+-- Configure Telescope fuzzy finding
+require('telescope').setup{
+    defaults = {
+        layout_strategy = 'horizontal',
+        layout_config = {
+            horizontal = {
+                preview_width = 0.6,
+            },
+        },
+    },
+    pickers = {
+        find_files = {
+            theme = "dropdown",
+        },
+    },
+    extensions = {
+        -- Extension configurations can go here
+    }
+}
 
 -- Configure Copilot Chat suggestion keybinding
 require("CopilotChat").setup({
