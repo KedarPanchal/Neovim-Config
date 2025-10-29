@@ -67,6 +67,12 @@ require("lazy").setup({
     { "ryanoasis/vim-devicons" },
     -- Autocompletion and LSP
     { "neoclide/coc.nvim", branch = "release" },
+    -- Git integration
+    { "tpope/vim-fugitive" },
+    {
+        "lewis6991/gitsigns.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
     -- Fuzzy Finder
     {
         "nvim-telescope/telescope.nvim", 
@@ -138,9 +144,9 @@ vim.cmd('colorscheme catppuccin-macchiato')
 -- =========================
 
 vim.cmd([[
-  autocmd VimEnter * botright terminal
-  autocmd VimEnter * resize 10 | wincmd p
-  autocmd VimEnter * NERDTree | wincmd p
-  autocmd VimEnter * CopilotChat
-  autocmd VimEnter * vertical resize 60 | wincmd p
+    autocmd VimEnter * botright terminal
+    autocmd VimEnter * resize 10 | wincmd p
+    autocmd VimEnter * NERDTree | wincmd p
+    autocmd VimEnter * CopilotChat
+    autocmd VimEnter * vertical resize 60 | wincmd p
 ]])
