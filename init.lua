@@ -130,11 +130,13 @@ require("CopilotChat").setup({
 -- =========================
 -- Color scheme
 -- =========================
+
 vim.cmd('colorscheme catppuccin-macchiato')
 
 -- =========================
 -- Startup commands
 -- =========================
+
 vim.cmd([[
   autocmd VimEnter * botright terminal
   autocmd VimEnter * resize 10 | wincmd p
