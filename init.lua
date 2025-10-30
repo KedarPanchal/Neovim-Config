@@ -2,45 +2,9 @@
 -- Baseline Settings
 -- =========================
 
--- Clipboard integration
-vim.opt.clipboard = { 'unnamedplus' }
-
--- Window splitting
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
--- Menu settings
-vim.opt.completeopt = { "noinsert", "menuone", "noselect" }
-
--- Keyboard shortcuts
-vim.g.mapleader = " " -- Space as leader
-vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>r', ':NERDTreeFocus<CR>R<C-W><C-P>', { noremap = true })
-
--- Visual enhancements
-vim.opt.cursorline = true
-vim.opt.number = true
-vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
-vim.opt.title = true
-
--- Tab settings
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.autoindent = true
-
--- Miscellaneous editing enhancements
-vim.opt.hidden = true
-vim.opt.mouse = 'a'
-vim.opt.inccommand = 'split'
-vim.opt.wrap = false
-
--- File type detection
-vim.cmd([[
-  filetype plugin indent on
-  syntax on
-]])
+require("config.editing") -- Load editing Settings
+require("config.keymaps") -- Load keymaps
+require("config.visual") -- Load visual settings
 
 -- =========================
 -- Import Dependencies
@@ -51,11 +15,4 @@ require("config.lazy") -- Load plugins
 -- =========================
 -- Startup commands
 -- =========================
-
-vim.cmd([[
-    autocmd VimEnter * botright terminal
-    autocmd VimEnter * resize 10 | wincmd p
-    autocmd VimEnter * NERDTree | wincmd p
-    autocmd VimEnter * CopilotChat
-    autocmd VimEnter * vertical resize 60 | wincmd p
-]])
+require("config.startup") -- Load startup commands
