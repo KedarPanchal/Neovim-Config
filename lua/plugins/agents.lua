@@ -1,3 +1,7 @@
+-- =========================
+-- Configure AI Agents
+-- =========================
+
 return {
     { "github/copilot.vim" },
     {
