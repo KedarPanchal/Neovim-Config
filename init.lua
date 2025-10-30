@@ -3,7 +3,7 @@
 -- =========================
 
 -- Clipboard integration
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = { 'unnamedplus' }
 
 -- Window splitting
 vim.opt.splitright = true
@@ -36,9 +36,6 @@ vim.opt.mouse = 'a'
 vim.opt.inccommand = 'split'
 vim.opt.wrap = false
 
--- Performance enhancements
-vim.opt.ttyfast = true
-
 -- File type detection
 vim.cmd([[
   filetype plugin indent on
@@ -46,98 +43,10 @@ vim.cmd([[
 ]])
 
 -- =========================
--- Plugin Management
--- Using lazy.nvim
--- =========================
+-- Import Dependencies
+-- ========================
 
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git", lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Plugin list
-require("lazy").setup({
-    -- File explorer
-    { "preservim/nerdtree" },
-    { "ryanoasis/vim-devicons" },
-    -- Autocompletion and LSP
-    { "neoclide/coc.nvim", branch = "release" },
-    -- Git integration
-    { "tpope/vim-fugitive" },
-    {
-        "lewis6991/gitsigns.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" }
-    },
-    -- Fuzzy Finder
-    {
-        "nvim-telescope/telescope.nvim", 
-        dependencies = { "nvim-lua/plenary.nvim" }
-    },
-    -- Color scheme 
-    { "catppuccin/nvim", name = "catppuccin" },
-    -- AI Agents
-    { "github/copilot.vim" },
-    { 
-        "CopilotC-Nvim/CopilotChat.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "github/copilot.vim"
-        },
-        build = "make tiktoken",
-        opts = {},
-    },
-})
-
--- =========================
--- Plugin Configuration
--- =========================
-
--- Use Enter for navigating completion menu (CoC)
-vim.api.nvim_set_keymap('i', '<CR>',
-  [[coc#pum#visible() ? coc#pum#next(1) : "\<CR>"]],
-  { expr = true, silent = true }
-)
-
--- Configure Telescope fuzzy finding
-require('telescope').setup{
-    defaults = {
-        layout_strategy = 'horizontal',
-        layout_config = {
-            horizontal = {
-                preview_width = 0.6,
-            },
-        },
-    },
-    pickers = {
-        find_files = {
-            theme = "dropdown",
-        },
-    },
-    extensions = {
-        -- Extension configurations can go here
-    }
-}
-
--- Configure Copilot Chat suggestion keybinding
-require("CopilotChat").setup({
-    suggestion = {
-        keymap = {
-            accept = "<S-TAB>"  -- Shift + Tab to accept suggestion
-        },
-    },
-})
-
--- =========================
--- Color scheme
--- =========================
-
-vim.cmd('colorscheme catppuccin-macchiato')
+require("config.lazy") -- Load plugins
 
 -- =========================
 -- Startup commands
