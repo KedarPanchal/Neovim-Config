@@ -8,11 +8,11 @@ require("config.visual") -- Load visual settings
 
 -- =========================
 -- Import Dependencies
--- ========================
+-- =========================
 
 require("config.lazy") -- Load plugins
 
 -- =========================
--- Startup commands
+-- Startup Commands
 -- =========================
 require("config.startup") -- Load startup commands
