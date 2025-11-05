@@ -98,7 +98,7 @@ return {
                         pane = 2,
                         {
                             section = "terminal",
-                            cmd = "fortune -s | cowsay",
+                            cmd = "fortune -s -n 100 | cowsay",
                             padding = 1,    
                         },
                         {
@@ -133,7 +133,6 @@ return {
             rename = { enabled = true },
             scope = { enabled = true },
             statuscolumn = { enabled = true },
-            terminal = { enabled = true },
             win = { enabled = true },
             words = { enabled = true },
         },
