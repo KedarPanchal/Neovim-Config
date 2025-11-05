@@ -33,18 +33,27 @@ return {
                     -- Custom dashboard keymaps
                     ---@type snacks.dashboard.Item[]
                     keys = {
-                        { icon = "", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')", key = "f" },
-                        { icon = "", desc = "New File", action = "ene | startinsert", key = "n" },
-                        { icon = "", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')", key = "r" },
-                        { icon = "", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live-grep')", key = "t" },
-                        { icon = "", desc = "Config", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.stdpath('config') })", key = "c" },
-                        { icon = "", desc = "Restore Session", section = "session", key = "s" },
-                        { icon = "", desc = "Lazy", action = ":Lazy", key = "l", enabled = package.loaded.lazy ~= nil },
-                        { icon = "", desc = "Quit Neovim", action = ":qa", key = "q" },
+                        { icon = "", desc = "New File", action = "ene | startinsert", key = "n" },
+                        { icon = "", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')", key = "f" },
+                        { icon = "󱧶", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')", key = "r" },
+                        { icon = "󰭷", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live-grep')", key = "t" },
+                        { icon = "", desc = "Config", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.stdpath('config') })", key = "c" },
+                        { icon = "", desc = "Restore Session", section = "session", key = "s" },
+                        { icon = "󰒲", desc = "Lazy", action = ":Lazy", key = "l", enabled = package.loaded.lazy ~= nil },
+                        { icon = "󰐥", desc = "Quit Neovim", action = ":qa", key = "q" },
                     },
                     -- Header design
                     header = [[
-                    ]],
+ █████   ████ █████   █████  ███                 
+░░███   ███░ ░░███   ░░███  ░░░                  
+ ░███  ███    ░███    ░███  ████  █████████████  
+ ░███████     ░███    ░███ ░░███ ░░███░░███░░███ 
+ ░███░░███    ░░███   ███   ░███  ░███ ░███ ░███ 
+ ░███ ░░███    ░░░█████░    ░███  ░███ ░███ ░███ 
+ █████ ░░████    ░░███      █████ █████░███ █████
+░░░░░   ░░░░      ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░ 
+                                                 
+]],
                 },
                 formats = {
                     icon = function(item)
