@@ -33,26 +33,25 @@ return {
                     -- Custom dashboard keymaps
                     ---@type snacks.dashboard.Item[]
                     keys = {
-                        { icon = "", desc = "New File", action = "ene | startinsert", key = "n" },
-                        { icon = "", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')", key = "f" },
-                        { icon = "󱧶", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')", key = "r" },
-                        { icon = "󰭷", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live-grep')", key = "t" },
-                        { icon = "", desc = "Config", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.stdpath('config') })", key = "c" },
-                        { icon = "", desc = "Restore Session", section = "session", key = "s" },
-                        { icon = "󰒲", desc = "Lazy", action = ":Lazy", key = "l", enabled = package.loaded.lazy ~= nil },
-                        { icon = "󰐥", desc = "Quit Neovim", action = ":qa", key = "q" },
+                        { icon = " ", desc = "New File", action = "ene | startinsert", key = "n" },
+                        { icon = "󱧶 ", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')", key = "r" },
+                        { icon = " ", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')", key = "f" },
+                        { icon = "󰭷 ", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live-grep')", key = "t" },
+                        { icon = " ", desc = "Config", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.stdpath('config') })", key = "c" },
+                        { icon = " ", desc = "Restore Session", section = "session", key = "s" },
+                        { icon = "󰒲 ", desc = "Lazy", action = ":Lazy", key = "l", enabled = package.loaded.lazy ~= nil },
+                        { icon = "󰐥 ", desc = "Quit Neovim", action = ":qa", key = "q" },
                     },
                     -- Header design
                     header = [[
- █████   ████ █████   █████  ███                 
-░░███   ███░ ░░███   ░░███  ░░░                  
- ░███  ███    ░███    ░███  ████  █████████████  
- ░███████     ░███    ░███ ░░███ ░░███░░███░░███ 
- ░███░░███    ░░███   ███   ░███  ░███ ░███ ░███ 
- ░███ ░░███    ░░░█████░    ░███  ░███ ░███ ░███ 
- █████ ░░████    ░░███      █████ █████░███ █████
-░░░░░   ░░░░      ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░ 
-                                                 
+ █████      █████   █████  ███                 
+░░███      ░░███   ░░███  ░░░                  
+ ░███ █████ ░███    ░███  ████  █████████████  
+ ░███░░███  ░███    ░███ ░░███ ░░███░░███░░███ 
+ ░██████░   ░░███   ███   ░███  ░███ ░███ ░███ 
+ ░███░░███   ░░░█████░    ░███  ░███ ░███ ░███ 
+ ████ █████    ░░███      █████ █████░███ █████
+░░░░ ░░░░░      ░░░      ░░░░░ ░░░░░ ░░░ ░░░░░ 
 ]],
                 },
                 formats = {
@@ -81,9 +80,50 @@ return {
                 },
                 sections = {
                     -- Sections can be defined here
-                    { section = "header" },
-                    { section = "keys" },
-                    { section = "startup" },
+                    -- Left pane
+                    {
+                        pane = 1,
+                        { section = "header" },
+                        {
+                            section = "keys",
+                            gap = 1,
+                            padding = 1,
+                        },
+                        {
+                            section = "startup",
+                            padding = 1,
+                        },
+                    },
+                    {
+                        pane = 2,
+                        {
+                            section = "terminal",
+                            cmd = "fortune -s | cowsay",
+                            padding = 1,    
+                        },
+                        {
+                            section = "recent_files",
+                            title = "Recent Files",
+                            icon = " ",
+                            padding = 1,
+                        },
+                        {
+                            section = "projects",
+                            title = "Projects",
+                            icon = " ",
+                            padding = 1,
+                        },
+                        {
+                            section = "terminal",
+                            title = "Git Status",
+                            icon = " ",
+                            enabled = function()
+                                return Snacks.git.get_root() ~= nil
+                            end,
+                            cmd = "git status --short --branch --renames",
+                            padding = 1,
+                        },
+                    }
                 },
             },
             git = { enabled = true },
