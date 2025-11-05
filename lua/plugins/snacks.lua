@@ -102,15 +102,15 @@ return {
                             padding = 1,    
                         },
                         {
-                            section = "recent_files",
-                            title = "Recent Files",
-                            icon = " ",
-                            padding = 1,
-                        },
-                        {
                             section = "projects",
                             title = "Projects",
                             icon = " ",
+                            padding = 1,
+                        },
+                        {
+                            section = "recent_files",
+                            title = "Recent Files",
+                            icon = " ",
                             padding = 1,
                         },
                         {
