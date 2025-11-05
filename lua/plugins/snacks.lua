@@ -15,6 +15,68 @@ return {
             },
             bigfile = { enabled = true },
             bufdelete = { enabled = true },
+            ---@class snacks.dashboard.Config
+            ---@field enabled? boolean
+            ---@field sections snacks.dashboard.Section[]
+            ---@field formats table<strings, snacks.dashboard.Text|fun(item:snacks.dashboard.Item, ctx:snacks.dashboard.Format.ctx):snacks.dashboard.Text>
+            dashboard = {
+                enabled = true,
+                width = 60,
+                row = nil,
+                col = nil,
+                pane_gap = 4,
+                autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                preset = {
+                    -- Fuzzy finder preset
+                    ---@type fun(action:string, opts:table)|nil
+                    pick = nil,
+                    -- Custom dashboard keymaps
+                    ---@type snacks.dashboard.Item[]
+                    keys = {
+                        { icon = "", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')", key = "f" },
+                        { icon = "", desc = "New File", action = "ene | startinsert", key = "n" },
+                        { icon = "", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')", key = "r" },
+                        { icon = "", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live-grep')", key = "t" },
+                        { icon = "", desc = "Config", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.stdpath('config') })", key = "c" },
+                        { icon = "", desc = "Restore Session", section = "session", key = "s" },
+                        { icon = "", desc = "Lazy", action = ":Lazy", key = "l", enabled = package.loaded.lazy ~= nil },
+                        { icon = "", desc = "Quit Neovim", action = ":qa", key = "q" },
+                    },
+                    -- Header design
+                    header = [[
+                    ]],
+                },
+                formats = {
+                    icon = function(item)
+                        if item.file and item.icon == "file" or item.icon == "directory" then
+                            return Snacks.dashboard.icon(item.file, item.icon)
+                        end
+                        return { item.icon, width = 2, hl = "icon" }
+                    end,
+                    footer = { "%s", align = "center" },
+                    header = { "%s", align = "center" },
+                    file = function(item, ctx)
+                        local fname = vim.fn.fnamemodify(item.file, ":~")
+                        fname = ctx.width and #fname > ctx.width and vim.fn.pathshorten(fname) or fname
+                        if #fname > ctx.width then
+                            local dir = vim.fn.fnamemodify(fname, ":h")
+                            local file = vim.fn.fnamemodify(fname, ":t")
+                            if dir and file then
+                                file = file:sub(-(ctx.width - #dir - 2))
+                                fname = dir .. "/…" .. file
+                            end
+                        end
+                        local dir, file = fname:match("^(.*)/(.+)$")
+                        return dir and { { dir .. "/", hl = "dir" }, { file, hl = "file" } } or { { fname, hl = "file" } }
+                    end,
+                },
+                sections = {
+                    -- Sections can be defined here
+                    { section = "header" },
+                    { section = "keys" },
+                    { section = "startup" },
+                },
+            },
             git = { enabled = true },
             notifier = { enabled = true },
             picker = { enabled = true },
