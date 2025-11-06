@@ -39,7 +39,7 @@ return {
                         { icon = "󰭷 ", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live-grep')", key = "t" },
                         { icon = " ", desc = "Config", action = ":lua Snacks.dashboard.pick('files', { cwd = vim.fn.stdpath('config') })", key = "c" },
                         { icon = " ", desc = "Restore Session", section = "session", key = "s" },
-                        { icon = "󰒲 ", desc = "Lazy", action = ":Lazy", key = "l", enabled = package.loaded.lazy ~= nil },
+                        { icon = "󰒲 ", desc = "Lazy", action = ":Lazy", key = "z", enabled = package.loaded.lazy ~= nil },
                         { icon = "󰐥 ", desc = "Quit Neovim", action = ":qa", key = "q" },
                     },
                     -- Header design
