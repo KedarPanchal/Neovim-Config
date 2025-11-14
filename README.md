@@ -25,8 +25,8 @@ The configuration is organized as follows:
 
 ## Features
 - Plugin management with `lazy.nvim`.
-- Language Server Protocol (LSP) support for Python, C++, and TypeScript using `coc.nvim`.
-- Syntax highlighting and code completion.
+- Language Server Protocol (LSP) support for Python, C++, Golang, and TypeScript using `coc.nvim`.
+- Syntax highlighting using `nvim-treesitter`.
 - Custom key mappings for efficient navigation and editing.
 - QoL utilities using `snacks.nvim`.
 - Integration with external tools like `cowsay` and `fortune` for fun startup messages.
