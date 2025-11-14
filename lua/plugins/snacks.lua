@@ -135,9 +135,19 @@ return {
             statuscolumn = { enabled = true },
             win = { enabled = true },
             words = { enabled = true },
+            zen = {
+                enabled = true,
+                win = {
+                    backdrop = {
+                        transparent = false,
+                    }
+                }
+            },
         },
         keys = {
             -- Keybindings can be defined here if needed
+            { "<Leader>z", function() Snacks.zen() end, desc = "Toggle Zen Mode" },
+            { "<Leader>Z", function() Snacks.zen.zoom() end, desc = "Zen Zoom" },
         },
         init = function()
             -- Keybindings and function calls can be set up here if needed
