@@ -20,6 +20,7 @@ vim.api.nvim_set_keymap("n", "<Leader>tl", ":botright vsplit | vertical resize 6
 -- File explorer keymaps
 vim.api.nvim_set_keymap("n", "<Leader>f",":NERDTreeToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>r",":NERDTreeRefreshRoot<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>z", ":Telescope find_files<CR>", { noremap = true })
 
 -- Bracket keymaps
 vim.api.nvim_set_keymap("i", "{", "{}<Esc>i", { noremap = true })
