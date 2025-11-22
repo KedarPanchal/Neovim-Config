@@ -29,6 +29,3 @@ vim.api.nvim_set_keymap("i", "[", "[]<Esc>i", { noremap = true })
 vim.api.nvim_set_keymap("i", "\"", "\"\"<Esc>i", { noremap = true })
 vim.api.nvim_set_keymap("i", "'", "''<Esc>i", { noremap = true })
 vim.api.nvim_set_keymap("i", "`", "``<Esc>i", { noremap = true })
-
--- AI Assistant keymaps
-vim.api.nvim_set_keymap("i", "<C-e>", "<Plug>(copilot-dismiss)", { silent = true })
