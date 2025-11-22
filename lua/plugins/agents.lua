@@ -3,24 +3,20 @@
 -- =========================
 
 return {
-    { "github/copilot.vim" },
     {
-        "CopilotC-Nvim/CopilotChat.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "github/copilot.vim",
-        },
-        build = "make tiktoken",
-        opts = {},
+        "zbirenbaum/copilot-cmp",
+        event = "InsertEnter",
         config = function()
-            require("CopilotChat").setup({
-                suggestion = {
-                    keymap = {
-                        accept = "<C-Enter>",
-                    },
-                },
-            })
+            require("copilot_cmp").setup()
         end,
+        dependencies = {
+            "zbirenbaum/copilot.lua",
+            config = function()
+                require("copilot").setup {
+                    suggestion = { enabled = false },
+                    panel = { enabled = false },
+                }
+            end,
+        },
     }
 }
