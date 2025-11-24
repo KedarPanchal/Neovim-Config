@@ -36,3 +36,6 @@ vim.api.nvim_set_keymap("i", "<C-e>", "<Plug>(copilot-dismiss)", { silent = true
 -- Markdown preview keymaps
 vim.api.nvim_set_keymap("n", "<Leader>mp", ":PeekOpen<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>mc", ":PeekClose<CR>", { noremap = true })
+
+-- QoL keymaps
+vim.api.nvim_set_keymap("n", "<Leader>h", ":nohlsearch<CR>", { noremap = true })
