@@ -12,13 +12,13 @@ return {
         opts = {
             instructions_file = "avante.md",
             provider = "groq",
-            vendors = {
+            providers = {
                 groq = {
                     __inherited_from = "openai",
                     api_key_name = "GROQ_API_KEY",
-                    endpoint = "https://api.groq.ai/openai/vi",
-                    model = "openai/gpt-oss-120b",
-                    max_tokens = 65536,
+                    endpoint = "https://api.groq.com/openai/v1",
+                    model = "groq/compound",
+                    max_tokens = 8192,
                     disable_tools = false,
                 },
             },
