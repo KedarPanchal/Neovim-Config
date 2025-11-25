@@ -3,22 +3,17 @@
 -- =========================
 
 return {
-    -- Kanso Zen Theme
+    -- Vague Theme
     {
-        "webhooked/kanso.nvim",
+        "vague-themes/vague.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            require("kanso").setup({
-                background = {
-                    dark = "zen",
-                    light = "zen",
-                },
-                foreground = "default",
-            })
-            vim.cmd.colorscheme("kanso")
-        end,
+            require("vague").setup({
 
+            })
+            vim.cmd.colorscheme("vague")
+        end
     },
 
 
