@@ -30,8 +30,6 @@ vim.api.nvim_set_keymap("i", "`", "``<Esc>i", { noremap = true })
 
 -- AI Assistant keymaps
 vim.api.nvim_set_keymap("i", "<C-e>", "<Plug>(copilot-dismiss)", { silent = true }) -- Dismiss Copilot suggestion
-vim.api.nvim_set_keymap("n", "<Leader>ac", ":AvanteChat<CR>", { noremap = true }) -- Open Avante Chat
-vim.api.nvim_set_keymap("n", "<Leader>at", ":AvanteToggle<CR>", { noremap = true }) -- Toggle Avante
 
 
 -- Markdown preview keymaps
