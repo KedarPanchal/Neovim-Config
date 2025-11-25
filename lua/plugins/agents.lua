@@ -44,6 +44,15 @@ return {
                     max_tokens = 16384,
                     disable_tools = false,
                 },
+                ["grok-fast"] = {
+                    __inherited_from = "openai",
+                    api_key_name = "OPENROUTER_API_KEY",
+                    endpoint = "https://openrouter.ai/api/v1",
+                    model = "x-ai/grok-4.1-fast:free",
+                    display_name = "Grok 4.1 Fast",
+                    max_tokens = 16384,
+                    disable_tools = false,
+                },
                 ["groq"] = {
                     __inherited_from = "openai",
                     api_key_name = "GROQ_API_KEY",

@@ -31,4 +31,9 @@ The configuration is organized as follows:
 - QoL utilities using `snacks.nvim`.
 - Integration with external tools like `cowsay` and `fortune` for fun startup messages.
 - AI tab completion with GitHub Copilot's `copilot.vim`.
-
+- Agent integration and code generation with `avante.nvim` with the following provider support:
+    - KAT Coder
+    - Qwen Coder
+    - GLM Air
+    - Grok Fast
+    - Groq Compound
