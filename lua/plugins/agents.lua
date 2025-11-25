@@ -30,6 +30,10 @@ return {
                     disable_tools = false,
                 }
             },
+            web_search_engine = {
+                provider = "tavily", -- Accessible through TAVILY_API_KEY environment variable
+                proxy = nil,
+            },
         },
         dependencies = {
             "nvim-lua/plenary.nvim",
