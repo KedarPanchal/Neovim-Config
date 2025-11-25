@@ -74,6 +74,7 @@ return {
             { "<leader>ac", "<cmd>AvanteChat<cr>", desc = "Avante Chat" },
             { "<leader>at", "<cmd>AvanteToggle<cr>", desc = "Avante Toggle" },
             { "<leader>af", "<cmd>AvanteFocus<cr>", desc = "Avante Focus" },
+            { "<leader>ad", "<cmd>AvanteClear<cmd>", desc = "Avante Clear" },
             { "<leader>as", function() require("avante.api").switch_provider() end, desc = "Avante Switch Provider" },
         },
         build = "make",
