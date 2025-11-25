@@ -11,7 +11,7 @@ return {
         lazy = false,
         opts = {
             instructions_file = "avante.md",
-            provider = "groq",
+            provider = "openrouter",
             providers = {
                 groq = {
                     __inherited_from = "openai",
@@ -21,6 +21,14 @@ return {
                     max_tokens = 8192,
                     disable_tools = false,
                 },
+                openrouter = {
+                    __inherited_from = "openai",
+                    api_key_name = "OPENROUTER_API_KEY",
+                    endpoint = "https://openrouter.ai/api/v1",
+                    model = "x-ai/grok-4.1-fast",
+                    max_tokens = 65535,
+                    disable_tools = false,
+                }
             },
         },
         dependencies = {
