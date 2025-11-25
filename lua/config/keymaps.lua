@@ -18,8 +18,6 @@ vim.api.nvim_set_keymap("n", "<Leader>th", ":topleft vsplit | vertical resize 60
 vim.api.nvim_set_keymap("n", "<Leader>tl", ":botright vsplit | vertical resize 60 | terminal<CR>", { noremap = true })
 
 -- File explorer keymaps
-vim.api.nvim_set_keymap("n", "<Leader>e",":NERDTreeToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>r",":NERDTreeRefreshRoot<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>f", ":Telescope find_files<CR>", { noremap = true })
 
 -- Bracket keymaps

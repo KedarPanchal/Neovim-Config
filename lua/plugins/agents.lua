@@ -3,7 +3,11 @@
 -- =========================
 
 return {
+    -- Copilot Tab Completion
     { "github/copilot.vim" },
+
+
+    -- Avante AI Agent Integration
     {
         "yetone/avante.nvim",
         event = "VeryLazy",

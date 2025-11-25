@@ -3,6 +3,7 @@
 -- =================================
 
 return {
+    -- Coc LSP
     {
         "neoclide/coc.nvim",
         branch = "release",
@@ -26,6 +27,9 @@ return {
             )
         end,
     },
+
+
+    -- Markdown Renderer
     {
         "MeanderingProgrammer/render-markdown.nvim",
         dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
