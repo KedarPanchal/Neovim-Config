@@ -25,3 +25,7 @@ vim.cmd([[
   filetype plugin indent on
   syntax on
 ]])
+
+-- Line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
