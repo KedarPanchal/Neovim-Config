@@ -3,6 +3,7 @@
 -- ========================= 
 
 vim.g.mapleader = " " -- Space as leader
+vim.g.maplocalleader = "," -- Comma as local leader (for plugins)
 
 -- Terminal mode keymaps
 vim.api.nvim_set_keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true }) -- Escape to normal mode in terminal
