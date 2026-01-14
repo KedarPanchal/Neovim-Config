@@ -18,6 +18,7 @@ return {
                 "coc-lua",
                 "coc-markdownlint",
                 "coc-pyright",
+                "coc-r-lsp",
                 "coc-tsserver",
             }
             -- Use Enter for navigating completion menu (CoC)
@@ -39,5 +40,24 @@ return {
         opts = {
             -- Custom markdown rendering options can be set here
         },
-    }
+    },
+
+
+    -- RStudio-like workflow
+    {
+        "R-nvim/R.nvim",
+        lazy = false,
+        config = function()
+            require("r").setup{
+                hook = {
+                    on_filetype = function()
+                        -- Map Enter to execute R code in the current line in normal mode and the selection in visual mode
+                        vim.api.nvim_set_keymap('n', '<CR>', ':RSendLine<CR>', { noremap = true, silent = true })
+                        vim.api.nvim_set_keymap('v', '<CR>', ':RSendSelection<CR>', { noremap = true, silent = true })
+                    end,
+                },
+                R_args = { "--quiet", "--no-save" },
+            }
+        end,
+    },
 }
