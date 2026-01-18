@@ -19,6 +19,7 @@ return {
                 "coc-markdownlint",
                 "coc-pyright",
                 "coc-r-lsp",
+                "coc-sql",
                 "coc-tsserver",
             }
             -- Use Enter for navigating completion menu (CoC)
