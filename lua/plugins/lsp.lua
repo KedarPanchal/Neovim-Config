@@ -22,6 +22,7 @@ return {
                 "coc-r-lsp",
                 "coc-sql",
                 "coc-tsserver",
+                "coc-xml",
             }
             -- Use Enter for navigating completion menu (CoC)
             vim.api.nvim_set_keymap('i', '<CR>',

@@ -55,6 +55,8 @@ The configuration is organized as follows:
   * R
   * SQL
   * TypeScript/JavaScript
+  * YAML
+  * XML
 * Syntax highlighting using `nvim-treesitter`.
 * Custom key mappings for efficient navigation and editing.
 * QoL utilities using `snacks.nvim`.
