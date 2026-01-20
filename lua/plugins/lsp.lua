@@ -14,6 +14,7 @@ return {
                 "coc-css",
                 "coc-go",
                 "coc-html",
+                "coc-java",
                 "coc-json",
                 "coc-lua",
                 "coc-markdownlint",

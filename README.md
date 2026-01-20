@@ -47,6 +47,7 @@ The configuration is organized as follows:
   * Go
   * Haskell
   * HTML/CSS
+  * Java
   * JSON
   * Lua
   * Markdown
