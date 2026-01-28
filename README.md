@@ -49,6 +49,7 @@ The configuration is organized as follows:
   * HTML/CSS
   * Java
   * JSON
+  * LaTeX
   * Lua
   * Markdown
   * Python

@@ -22,6 +22,7 @@ return {
                 "coc-r-lsp",
                 "coc-sql",
                 "coc-tsserver",
+                "coc-vimtex",
                 "coc-xml",
             }
             -- Use Enter for navigating completion menu (CoC)
