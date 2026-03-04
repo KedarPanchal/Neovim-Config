@@ -32,10 +32,11 @@ vim.api.nvim_set_keymap("i", "`", "``<Esc>i", { noremap = true })
 -- AI Assistant keymaps
 vim.api.nvim_set_keymap("i", "<C-e>", "<Plug>(copilot-dismiss)", { silent = true }) -- Dismiss Copilot suggestion
 
-
 -- Markdown preview keymaps
 vim.api.nvim_set_keymap("n", "<Leader>mp", ":PeekOpen<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>mc", ":PeekClose<CR>", { noremap = true })
 
 -- QoL keymaps
-vim.api.nvim_set_keymap("n", "<Leader>h", ":nohlsearch<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>h", ":nohlsearch<CR>", { noremap = true }) -- Clear highlights
+vim.api.nvim_set_keymap("n", "<Leader>gd", "<Plug>(coc-definition)", { noremap = true }) -- Go to definition
+vim.api.nvim_set_keymap("n", "<Leader>gi", "<Plug>(coc-implementation)", { noremap = true }) -- Go to implementation
