@@ -99,7 +99,7 @@ return {
                         {
                             section = "terminal",
                             cmd = "fortune -s -n 100 | cowsay",
-                            padding = 1,    
+                            padding = 1,
                         },
                         {
                             section = "projects",
