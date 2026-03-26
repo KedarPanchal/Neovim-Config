@@ -59,6 +59,7 @@ The configuration is organized as follows:
   * YAML
   * XML
 * Syntax highlighting using `nvim-treesitter`.
+* Colorpicker using `ccc.nvim`.
 * Custom key mappings for efficient navigation and editing.
 * QoL utilities using `snacks.nvim`.
 * Integration with external tools like `cowsay` and `fortune` for fun startup messages.

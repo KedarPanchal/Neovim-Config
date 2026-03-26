@@ -75,4 +75,18 @@ return {
             vim.g.vimtex_auto_compile = 1
         end,
     },
+
+
+    -- CSS Color Preview
+    {
+        "uga-rosa/ccc.nvim",
+        cmd = { "CccPick", "CccHighlighterToggle", "CccHighlighterEnable", "CccHighlighterDisable", "CccConvert" },
+        keys = {
+            { "<leader>cp", "<cmd>CccPick<cr>",               desc = "Color picker" },
+            { "<leader>ch", "<cmd>CccHighlighterToggle<cr>",  desc = "Color highlighter toggle" },
+          },
+          opts = {
+            highlighter = { auto_enable = true },
+          },
+    }
 }
