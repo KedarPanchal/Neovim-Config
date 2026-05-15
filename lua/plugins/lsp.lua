@@ -2,6 +2,12 @@
 -- Configure LSP and Completion
 -- =================================
 
+vim.filetype.add({
+    extension = {
+        tpp = "cpp",
+    }
+})
+
 return {
     -- Coc LSP
     {
