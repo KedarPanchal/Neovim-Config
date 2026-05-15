@@ -8,7 +8,7 @@ I also write lots and lots of Markdown files. This configuration is optimized
 for these tasks. This configuration is perpetually incomplete, so I intend on
 updating it frequently.
 
-> **NOTE**
+> [!NOTE]
 >
 > With the deprecation of `treesitter`, some of my packages (notably my markdown configuration) are currently broken.
 > This will be fixed when I have time to update my configuration.
