@@ -60,6 +60,7 @@ The configuration is organized as follows:
   * Python
   * R
   * SQL
+  * Swift
   * TypeScript/JavaScript
   * YAML
   * XML

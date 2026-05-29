@@ -26,6 +26,7 @@ return {
                 "coc-markdownlint",
                 "coc-pyright",
                 "coc-r-lsp",
+                "coc-sourcekit",
                 "coc-sql",
                 "coc-tsserver",
                 "coc-vimtex",
