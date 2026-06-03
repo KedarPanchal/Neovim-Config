@@ -6,37 +6,48 @@ vim.g.mapleader = " " -- Space as leader
 vim.g.maplocalleader = "," -- Comma as local leader (for plugins)
 
 -- Terminal mode keymaps
-vim.api.nvim_set_keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true }) -- Escape to normal mode in terminal
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]]) -- Escape to normal mode in terminal
 
-vim.api.nvim_set_keymap("n", "<Leader>t<Up>", ":topleft split | resize 15 | terminal<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>t<Down>", ":botright split | resize 15 | terminal<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>t<Left>", ":topleft vsplit | vertical resize 60 | terminal<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>t<Right>", ":botright vsplit | vertical resize 60 | terminal<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>t<Up>", ":topleft split | resize 15 | terminal<CR>")
+vim.keymap.set("n", "<Leader>t<Down>", ":botright split | resize 15 | terminal<CR>")
+vim.keymap.set("n", "<Leader>t<Left>", ":topleft vsplit | vertical resize 60 | terminal<CR>")
+vim.keymap.set("n", "<Leader>t<Right>", ":botright vsplit | vertical resize 60 | terminal<CR>")
 
-vim.api.nvim_set_keymap("n", "<Leader>tk", ":topleft split | resize 15 | terminal<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>tj", ":botright split | resize 15 | terminal<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>th", ":topleft vsplit | vertical resize 60 | terminal<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>tl", ":botright vsplit | vertical resize 60 | terminal<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>tk", ":topleft split | resize 15 | terminal<CR>")
+vim.keymap.set("n", "<Leader>tj", ":botright split | resize 15 | terminal<CR>")
+vim.keymap.set("n", "<Leader>th", ":topleft vsplit | vertical resize 60 | terminal<CR>")
+vim.keymap.set("n", "<Leader>tl", ":botright vsplit | vertical resize 60 | terminal<CR>")
 
 -- File explorer keymaps
-vim.api.nvim_set_keymap("n", "<Leader>f", ":Telescope find_files<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>f", ":Telescope find_files<CR>")
 
 -- Bracket keymaps
-vim.api.nvim_set_keymap("i", "{", "{}<Esc>i", { noremap = true })
-vim.api.nvim_set_keymap("i", "(", "()<Esc>i", { noremap = true })
-vim.api.nvim_set_keymap("i", "[", "[]<Esc>i", { noremap = true })
-vim.api.nvim_set_keymap("i", "\"", "\"\"<Esc>i", { noremap = true })
-vim.api.nvim_set_keymap("i", "'", "''<Esc>i", { noremap = true })
-vim.api.nvim_set_keymap("i", "`", "``<Esc>i", { noremap = true })
+vim.keymap.set("i", "{", "{}<Esc>i")
+vim.keymap.set("i", "(", "()<Esc>i")
+vim.keymap.set("i", "[", "[]<Esc>i")
+vim.keymap.set("i", "\"", "\"\"<Esc>i")
+vim.keymap.set("i", "'", "''<Esc>i")
+vim.keymap.set("i", "`", "``<Esc>i")
 
 -- AI Assistant keymaps
-vim.api.nvim_set_keymap("i", "<C-e>", "<Plug>(copilot-dismiss)", { silent = true }) -- Dismiss Copilot suggestion
+vim.keymap.set("i", "<C-e>", "<Plug>(copilot-dismiss)", { silent = true }) -- Dismiss Copilot suggestion
 
 -- Markdown preview keymaps
-vim.api.nvim_set_keymap("n", "<Leader>mp", ":PeekOpen<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>mc", ":PeekClose<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>mp", ":PeekOpen<CR>")
+vim.keymap.set("n", "<Leader>mc", ":PeekClose<CR>")
 
 -- QoL keymaps
-vim.api.nvim_set_keymap("n", "<Leader>h", ":nohlsearch<CR>", { noremap = true }) -- Clear highlights
-vim.api.nvim_set_keymap("n", "<Leader>gd", "<Plug>(coc-definition)", { noremap = true }) -- Go to definition
-vim.api.nvim_set_keymap("n", "<Leader>gi", "<Plug>(coc-implementation)", { noremap = true }) -- Go to implementation
+vim.keymap.set("n", "<Leader>h", ":nohlsearch<CR>") -- Clear highlights
+vim.keymap.set("n", "<Leader>gd", "<Plug>(coc-definition)") -- Go to definition
+vim.keymap.set("n", "<Leader>gi", "<Plug>(coc-implementation)") -- Go to implementation
+
+-- Building and running keymaps
+vim.keynamp.set("n", "<Leader>cmc", "<Cmd>cmake -S . -B build<CR>")
+vim.keymap.set("n", "<Leader>cmb", "<Cmd>cmake --build build<CR>")
+vim.keymap.set("n", "<Leader>cma", "<Cmd>cmake -S . -B build && cmake --build build<CR>")
+
+vim.keymap.set("n", "<Leader>uv", "<Cmd>uv run %<CR>")
+
+vim.keymap.set("n", "<Leader>cbb", "<Cmd>cabal build<CR>")
+vim.keymap.set("n", "<Leader>cbr", "<Cmd>cabal run<CR>")
+vim.keymap.set("n", "<Leader>cba", "<Cmd>cabal build && cabal run<CR>")
