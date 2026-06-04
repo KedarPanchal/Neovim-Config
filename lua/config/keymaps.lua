@@ -42,7 +42,7 @@ vim.keymap.set("n", "<Leader>gd", "<Plug>(coc-definition)") -- Go to definition
 vim.keymap.set("n", "<Leader>gi", "<Plug>(coc-implementation)") -- Go to implementation
 
 -- Building and running keymaps
-vim.keynamp.set("n", "<Leader>cmc", "<Cmd>cmake -S . -B build<CR>")
+vim.keymap.set("n", "<Leader>cmc", "<Cmd>cmake -S . -B build<CR>")
 vim.keymap.set("n", "<Leader>cmb", "<Cmd>cmake --build build<CR>")
 vim.keymap.set("n", "<Leader>cma", "<Cmd>cmake -S . -B build && cmake --build build<CR>")
 
