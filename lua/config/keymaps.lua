@@ -20,6 +20,7 @@ vim.keymap.set("n", "<Leader>tl", ":botright vsplit | vertical resize 60 | termi
 
 -- File explorer keymaps
 vim.keymap.set("n", "<Leader>f", ":Telescope find_files<CR>")
+vim.keymap.set("n", "<Leader>g", ":Telescope live_grep<CR>")
 
 -- Bracket keymaps
 vim.keymap.set("i", "{", "{}<Esc>i")
