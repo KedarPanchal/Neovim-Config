@@ -9,94 +9,10 @@ vim.filetype.add({
 })
 
 return {
-    -- Coc LSP
+    -- LSP Configuration
     {
-        "neoclide/coc.nvim",
-        branch = "release",
+        "neovim/nvim-lspconfig",
         config = function()
-            -- Load CoC extensions
-            vim.g.coc_global_extensions = {
-                "coc-clangd",
-                "coc-css",
-                "coc-go",
-                "coc-html",
-                "coc-java",
-                "coc-json",
-                "coc-lua",
-                "coc-markdownlint",
-                "coc-pyright",
-                "coc-r-lsp",
-                "coc-sourcekit",
-                "coc-sql",
-                "coc-tsserver",
-                "coc-vimtex",
-                "coc-xml",
-            }
-            -- Use Enter for navigating completion menu (CoC)
-            vim.api.nvim_set_keymap('i', '<CR>',
-                [[coc#pum#visible() ? coc#pum#next(1) : "\<CR>"]],
-                { expr = true, silent = true }
-            )
-        end,
-    },
-
-
-    -- RStudio-like workflow
-    {
-        "R-nvim/R.nvim",
-        lazy = false,
-        config = function()
-            require("r").setup{
-                hook = {
-                    on_filetype = function()
-                        -- Map Enter to execute R code in the current line in normal mode and the selection in visual mode
-                        vim.api.nvim_set_keymap('n', '<CR>', ':RSendLine<CR>', { noremap = true, silent = true })
-                        vim.api.nvim_set_keymap('v', '<CR>', ':RSendSelection<CR>', { noremap = true, silent = true })
-                    end,
-                },
-                R_args = { "--quiet", "--no-save" },
-            }
-        end,
-    },
-
-
-    -- LaTeX Support
-    {
-        "lervag/vimtex",
-        lazy = false,
-        config = function()
-            vim.g.vimtex_view_method = 'skim'
-            vim.g.vimtex_auto_compile = 1
-        end,
-    },
-
-
-    -- CSS Color Preview
-    {
-        "uga-rosa/ccc.nvim",
-        cmd = { "CccPick", "CccHighlighterToggle", "CccHighlighterEnable", "CccHighlighterDisable", "CccConvert" },
-        keys = {
-            { "<leader>cp", "<cmd>CccPick<cr>",               desc = "Color picker" },
-            { "<leader>ch", "<cmd>CccHighlighterToggle<cr>",  desc = "Color highlighter toggle" },
-          },
-          opts = {
-            highlighter = { auto_enable = true },
-          },
-    },
-
-    -- Replace XCode
-     {
-        "wojciech-kulik/xcodebuild.nvim",
-        dependencies = {
-          "nvim-telescope/telescope.nvim",
-
-          "MunifTanjim/nui.nvim",
-          "nvim-treesitter/nvim-treesitter", -- (optional) for Quick tests support (required Swift parser)
-        },
-        config = function()
-          require("xcodebuild").setup({
-              -- put some options here or leave it empty to use default settings
-          })
         end,
     },
 }
