@@ -49,6 +49,8 @@ The configuration is organized as follows:
 * Plugin management with `lazy.nvim`.
 * Language Server Protocol (LSP) for:
   * C/C++
+  * Lua
+  * Python
 * Syntax highlighting using `nvim-treesitter`.
 * Colorpicker using `ccc.nvim`.
 * Custom key mappings for efficient navigation and editing.
