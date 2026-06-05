@@ -47,23 +47,8 @@ The configuration is organized as follows:
 ## Features
 
 * Plugin management with `lazy.nvim`.
-* Language Server Protocol (LSP) using `coc.nvim` for:
+* Language Server Protocol (LSP) for:
   * C/C++
-  * Go
-  * Haskell
-  * HTML/CSS
-  * Java
-  * JSON
-  * $\LaTeX$
-  * Lua
-  * Markdown
-  * Python
-  * R
-  * SQL
-  * Swift
-  * TypeScript/JavaScript
-  * YAML
-  * XML
 * Syntax highlighting using `nvim-treesitter`.
 * Colorpicker using `ccc.nvim`.
 * Custom key mappings for efficient navigation and editing.
