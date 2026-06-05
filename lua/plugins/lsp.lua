@@ -41,19 +41,6 @@ return {
     },
 
 
-    -- Markdown Renderer
-    {
-        "MeanderingProgrammer/render-markdown.nvim",
-        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
-        ---@module "render-markdown"
-        ---@type render.md.UserConfig
-        restart_highlighter = true,
-        opts = {
-            -- Custom markdown rendering options can be set here
-        },
-    },
-
-
     -- RStudio-like workflow
     {
         "R-nvim/R.nvim",
