@@ -18,6 +18,10 @@ vim.keymap.set("n", "<Leader>tj", ":botright split | resize 15 | terminal<CR>")
 vim.keymap.set("n", "<Leader>th", ":topleft vsplit | vertical resize 60 | terminal<CR>")
 vim.keymap.set("n", "<Leader>tl", ":botright vsplit | vertical resize 60 | terminal<CR>")
 
+-- LSP Keymaps
+vim.keymap.set("i", "<C-O>", "<C-x><C-o>") -- Trigger completion
+vim.keymap.set("n", "<Leader>d", "<C-]>") -- Go to definition
+
 -- File explorer keymaps
 vim.keymap.set("n", "<Leader>f", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<Leader>g", ":Telescope live_grep<CR>")
@@ -39,8 +43,6 @@ vim.keymap.set("n", "<Leader>mc", ":PeekClose<CR>")
 
 -- QoL keymaps
 vim.keymap.set("n", "<Leader>h", ":nohlsearch<CR>") -- Clear highlights
-vim.keymap.set("n", "<Leader>gd", "<Plug>(coc-definition)") -- Go to definition
-vim.keymap.set("n", "<Leader>gi", "<Plug>(coc-implementation)") -- Go to implementation
 
 -- Building and running keymaps
 vim.keymap.set("n", "<Leader>cmc", "<Cmd>cmake -S . -B build<CR>")
