@@ -8,11 +8,6 @@ I also write lots and lots of Markdown files. This configuration is optimized
 for these tasks. This configuration is perpetually incomplete, so I intend on
 updating it frequently.
 
-> [!NOTE]
->
-> With the deprecation of `treesitter`, some of my packages (notably my markdown configuration) are currently broken.
-> This will be fixed when I have time to update my configuration.
-
 ## Installation
 
 To fully install this configuration, git clone this repository into your Neovim
@@ -50,6 +45,12 @@ The configuration is organized as follows:
 * Language Server Protocol (LSP) for:
   * C/C++
   * Haskell
+  * Julia
+    * LSP support for Julia requires some additional setup.
+    * Run the below code to set up the LSP environment:
+        ```bash
+        julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer"); Pkg.add("SymbolServer"); Pkg.add("StaticLint")'
+        ```
   * Lua
   * Python
 * Syntax highlighting using `nvim-treesitter`.
