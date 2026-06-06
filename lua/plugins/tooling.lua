@@ -45,19 +45,6 @@ return {
     },
 
 
-    -- CSS Color Preview
-    {
-        "uga-rosa/ccc.nvim",
-        cmd = { "CccPick", "CccHighlighterToggle", "CccHighlighterEnable", "CccHighlighterDisable", "CccConvert" },
-        keys = {
-            { "<leader>cp", "<cmd>CccPick<cr>",               desc = "Color picker" },
-            { "<leader>ch", "<cmd>CccHighlighterToggle<cr>",  desc = "Color highlighter toggle" },
-          },
-          opts = {
-            highlighter = { auto_enable = true },
-          },
-    },
-
     -- Markdown Preview
     {
         "toppair/peek.nvim",
@@ -77,5 +64,33 @@ return {
             vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
             vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
         end,
+    },
+
+
+    -- Symbol Autocompletion
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "kdheepak/cmp-latex-symbols",
+        },
+        config = function()
+            local cmp = require("cmp")
+            cmp.setup({
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                    { name = "latex_symbols", option = { strategy = 1 } },
+                    {name = "buffer" },
+                }),
+                mapping = cmp.mapping.preset.insert({
+                    ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion menu
+                    ["<CR>"] = cmp.mapping.confirm({ -- Confirm selection with Enter
+                        behavior = cmp.ConfirmBehavior.Replace,
+                        select = true,
+                    }),
+                    ["<Tab>"] = cmp.mapping.select_next_item(), -- Navigate to next item
+                    ["<S-Tab>"] = cmp.mapping.select_prev_item(), -- Navigate to previous item;w
+                })
+            })
+        end
     }
 }
