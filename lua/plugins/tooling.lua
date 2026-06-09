@@ -92,5 +92,12 @@ return {
                 })
             })
         end
+    },
+
+
+    -- ZScript Support
+    {
+        "marrub--/vim-zscript",
+        ft = "zscript",
     }
 }
