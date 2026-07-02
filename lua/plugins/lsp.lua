@@ -18,6 +18,7 @@ return {
             vim.lsp.enable("julials")
             vim.lsp.enable("lua_ls")
             vim.lsp.enable("pyright")
+            vim.lsp.enable("vtsls")
         end,
     },
 }

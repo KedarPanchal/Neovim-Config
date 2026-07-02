@@ -53,6 +53,7 @@ The configuration is organized as follows:
         ```
   * Lua
   * Python
+  * TypeScript
   * ZScript (for DOOM modding)
 * Syntax highlighting using `nvim-treesitter`.
 * Colorpicker using `ccc.nvim`.
