@@ -56,8 +56,8 @@ The configuration is organized as follows:
   * TypeScript
   * ZScript (for DOOM modding)
 * Syntax highlighting using `nvim-treesitter`.
-* Colorpicker using `ccc.nvim`.
 * Custom key mappings for efficient navigation and editing.
 * QoL utilities using `snacks.nvim`.
 * Integration with external tools like `cowsay` and `fortune` for fun startup messages.
 * AI tab completion with GitHub Copilot's `copilot.vim`.
+* Discord RPC Integration for maximum LARPing
