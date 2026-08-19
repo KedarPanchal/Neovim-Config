@@ -90,4 +90,13 @@ return {
     {
         "kuri-sun/todoage.nvim"
     },
+
+    -- Cursor Smear
+    {
+        "sphamba/smear-cursor.nvim",
+        opts = {
+            smear_between_buffers = true,
+            smear_insert_mode = true,
+        }
+    }
 }
