@@ -86,11 +86,6 @@ return {
         end,
     },
 
-    -- TODO Age
-    {
-        "kuri-sun/todoage.nvim"
-    },
-
     -- Cursor Smear
     {
         "sphamba/smear-cursor.nvim",
