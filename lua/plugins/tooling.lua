@@ -94,14 +94,6 @@ return {
         end
     },
 
-
-    -- ZScript Support
-    {
-        "marrub--/vim-zscript",
-        ft = "zscript",
-    },
-
-
     -- TODO Age
     {
         "kuri-sun/todoage.nvim"

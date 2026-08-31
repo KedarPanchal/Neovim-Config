@@ -54,7 +54,6 @@ The configuration is organized as follows:
   * Lua
   * Python
   * TypeScript
-  * ZScript (for DOOM modding)
 * Syntax highlighting using `nvim-treesitter`.
 * Custom key mappings for efficient navigation and editing.
 * QoL utilities using `snacks.nvim`.
