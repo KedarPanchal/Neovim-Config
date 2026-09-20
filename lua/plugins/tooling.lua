@@ -29,7 +29,6 @@ return {
         end
     },
 
-
     -- Copilot Tab Completion
     { "github/copilot.vim" },
 
@@ -43,7 +42,6 @@ return {
             vim.g.vimtex_auto_compile = 1
         end,
     },
-
 
     -- Markdown Preview
     {
@@ -65,7 +63,6 @@ return {
             vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
         end,
     },
-
 
     -- Symbol Autocompletion
     {
@@ -97,5 +94,10 @@ return {
     -- TODO Age
     {
         "kuri-sun/todoage.nvim"
+    },
+
+    -- PlatformIO (embedded systems)
+    {
+        "normen/vim-pio",
     },
 }
