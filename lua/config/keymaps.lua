@@ -43,14 +43,3 @@ vim.keymap.set("n", "<Leader>mc", ":PeekClose<CR>")
 
 -- QoL keymaps
 vim.keymap.set("n", "<Leader>h", ":nohlsearch<CR>") -- Clear highlights
-
--- Building and running keymaps
-vim.keymap.set("n", "<Leader>cmc", "<Cmd>cmake -S . -B build<CR>")
-vim.keymap.set("n", "<Leader>cmb", "<Cmd>cmake --build build<CR>")
-vim.keymap.set("n", "<Leader>cma", "<Cmd>cmake -S . -B build && cmake --build build<CR>")
-
-vim.keymap.set("n", "<Leader>uv", "<Cmd>uv run %<CR>")
-
-vim.keymap.set("n", "<Leader>cbb", "<Cmd>cabal build<CR>")
-vim.keymap.set("n", "<Leader>cbr", "<Cmd>cabal run<CR>")
-vim.keymap.set("n", "<Leader>cba", "<Cmd>cabal build && cabal run<CR>")
