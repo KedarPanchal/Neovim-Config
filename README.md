@@ -59,4 +59,6 @@ The configuration is organized as follows:
 * QoL utilities using `snacks.nvim`.
 * Integration with external tools like `cowsay` and `fortune` for fun startup messages.
 * AI tab completion with GitHub Copilot's `copilot.vim`.
+* LaTeX tooling with `vimtex`.
+* Multi-database SQL support with `sqlua.nvim`.
 * Discord RPC Integration for maximum LARPing

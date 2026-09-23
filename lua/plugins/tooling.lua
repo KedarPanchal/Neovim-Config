@@ -32,7 +32,6 @@ return {
     -- Copilot Tab Completion
     { "github/copilot.vim" },
 
-
     -- LaTeX Support
     {
         "lervag/vimtex",
@@ -40,6 +39,16 @@ return {
         config = function()
             vim.g.vimtex_view_method = 'skim'
             vim.g.vimtex_auto_compile = 1
+        end,
+    },
+
+    -- SQL Support
+    {
+        "xemptuous/sqlua.nvim",
+        lazy = true,
+        cmd = "SQLua",
+        config = function()
+            require("sqlua").setup()
         end,
     },
 
