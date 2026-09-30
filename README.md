@@ -54,6 +54,7 @@ The configuration is organized as follows:
   * Lua
   * Python
   * TypeScript
+  # WebGPU Shader Language
 * Syntax highlighting using `nvim-treesitter`.
 * Custom key mappings for efficient navigation and editing.
 * QoL utilities using `snacks.nvim`.

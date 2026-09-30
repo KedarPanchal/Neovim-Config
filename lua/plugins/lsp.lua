@@ -19,6 +19,7 @@ return {
             vim.lsp.enable("lua_ls")
             vim.lsp.enable("pyright")
             vim.lsp.enable("vtsls")
+            vim.lsp.enable("wgsl_analyzer")
         end,
     },
 }
